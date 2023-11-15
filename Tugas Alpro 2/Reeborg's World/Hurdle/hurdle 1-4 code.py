@@ -23,3 +23,15 @@ def turn_right():
 while not at_goal():
     #jika depan kosong atau tidak ada halangan maka :
     if front_is_clear():
+        #maju satu langkah
+        move()
+        #jika kanan kosong atau tidak ada halangan maka :
+        if right_is_clear():
+            #memanggil fungsi turn_right() agar robot berbalik menghadap kanan
+            turn_right()
+    #jika terdapat halangan atau tembok di depan maka :
+    if wall_in_front():
+        #jika ada tembok atau halangan di depan dan ada tembok atau halangan di kanan maka :
+        if wall_in_front() and wall_on_right():
+            #menghadap ke kiri
+            turn_left()
